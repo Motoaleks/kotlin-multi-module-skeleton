@@ -1,14 +1,15 @@
 apply plugin: 'application'
-defaultTasks 'run'
-
-mainClassName = 'MainKt'
+apply plugin: 'java'
 
 dependencies {
     api project(':moduleA')
     api project(':moduleB')
 }
 
+defaultTasks 'run'
+mainClassName = 'aasmile.Main'
+
 jar {
-    manifest { attributes 'Main-Class': 'MainKt' }
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest { attributes 'Main-Class': 'aasmile.Main' }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
