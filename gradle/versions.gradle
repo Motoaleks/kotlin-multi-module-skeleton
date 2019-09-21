@@ -1,0 +1,5 @@
+ext.versions = [
+        kotlin  : "1.3.50",
+        dagger  : "2.13",
+        rxkotlin: "2.3.0",
+]

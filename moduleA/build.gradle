@@ -1,0 +1,7 @@
+apply plugin: "kotlin-kapt"
+
+dependencies {
+    implementation "com.google.dagger:dagger:$versions.dagger"
+    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+    implementation "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlin"
+}

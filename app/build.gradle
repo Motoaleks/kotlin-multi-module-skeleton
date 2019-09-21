@@ -1,0 +1,14 @@
+apply plugin: 'application'
+defaultTasks 'run'
+
+mainClassName = 'MainKt'
+
+dependencies {
+    api project(':moduleA')
+    api project(':moduleB')
+}
+
+jar {
+    manifest { attributes 'Main-Class': 'MainKt' }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
